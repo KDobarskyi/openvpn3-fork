@@ -88,5 +88,6 @@ inline std::wstring pack_string_vector(const std::vector<std::string> &strvec)
     return ret;
 }
 
+} // namespace openvpn::wstring
+
 #endif // #ifdef _WIN32
-}
