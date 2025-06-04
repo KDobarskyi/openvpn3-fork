@@ -115,7 +115,7 @@ inline int memq_new(BIO *b)
         return 0;
     BIO_set_shutdown(b, 1);
     BIO_set_init(b, 1);
-    b->return_eof_on_empty = false;
+    bmq->return_eof_on_empty = false;
     BIO_set_data(b, (void *)bmq);
     return 1;
 }
