@@ -65,4 +65,10 @@ TEST(misc, host_port)
     test("/foo/bar", "unix", false, "", "", 0, false);
     test("/foo/bar", "unix", true, "/foo/bar", "unix", 0, true);
     test("/foo/bar:unix", "", true, "/foo/bar", "unix", 0, true);
+
+    // Reject hosts with illegal characters
+    test("foo@bar", "1234", false, "", "", 0, false);
+    test("foo@bar:80", "", false, "", "", 0, false);
+    test("foo$bar", "1234", false, "", "", 0, false);
+    test("foo$bar:80", "", false, "", "", 0, false);
 }
